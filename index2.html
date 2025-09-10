@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>💌 رسالتي</title>
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      overflow:hidden;
+      background:#fff0f0; /* خلفية فاتحة رومانسية */
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:Arial, sans-serif;
+    }
+
+    /* الرسالة */
+    .message{
+      z-index:10;
+      position:relative;
+      text-align:center;
+      background:rgba(255,255,255,0.8);
+      padding:25px 40px;
+      border-radius:15px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+    .message h1{
+      margin:0;
+      font-size:28px;
+      color:#c00; /* أحمر */
+    }
+    .message p{
+      font-size:20px;
+      color:#333;
+    }
+
+    /* القلوب */
+    .heart{
+      position:fixed;
+      top:-10vh;
+      font-size:24px;
+      color:red;
+      animation:fall linear forwards;
+    }
+
+    @keyframes fall{
+      to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1>💖 رسالتي ليكي 💖</h1>
+    <p>
+      <!--متزعليش مني يروحي وحقك عليا انا اسف  ولله وبحبك ومقصدتش حقك عليا❤ -->
+     ❤❤❤ يا أجمل حد في حياتي.. دي صفحة معمولة عشان اقولك متزعليش مني يروحي وحقك عليا انا اسف  ولله وبحبك ❤❤❤ 💕 
+    </p>
+  </div>
+
+  <script>
+    // دالة لإنشاء قلب
+    function createHeart(){
+      const heart=document.createElement('div');
+      heart.className="heart";
+      heart.textContent="❤"; // الإيموجي
+      heart.style.left=Math.random()*100+"vw"; // عشوائي في العرض
+      heart.style.animationDuration=(3+Math.random()*4)+"s"; // سرعة مختلفة
+      heart.style.fontSize=(20+Math.random()*25)+"px"; // حجم عشوائي
+      document.body.appendChild(heart);
+
+      // يمسح العنصر بعد الانيميشن
+      setTimeout(()=>heart.remove(),7000);
+    }
+
+    // كل 300ms ينزل قلب جديد
+    setInterval(createHeart,300);
+  </script>
+</body>
+</html>
